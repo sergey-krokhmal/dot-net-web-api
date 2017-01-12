@@ -14,5 +14,8 @@ namespace InternalMoney.Models
 
 		[Required]
 		public string Password { get; set; }
+
+		[Required]
+		public decimal Balance { get; set; }
 	}
 }

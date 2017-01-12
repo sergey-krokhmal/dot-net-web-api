@@ -1,19 +1,35 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Product App</title>
+    <title>Parrot Wings</title>
 </head>
 <body>
-
     <div>
-        <h2>All Products</h2>
-        <ul id="products" />
+        <h2>Parrot Wings</h2>
     </div>
     <div>
-        <h2>Search by ID</h2>
-        <input type="text" id="prodId" size="5" />
-        <input type="button" value="Search" onclick="find();" />
-        <p id="product" />
+        <fieldset>
+            <legend>Регистрация</legend>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><input class="input-user-name" type="text" placeholder="Имя" /></td>
+                    </tr>
+                    <tr>
+                        <td><input class="input-user-email" type="email" placeholder="E-mail" /></td>
+                    </tr>
+                    <tr>
+                        <td><input class="input-password" type="password" placeholder="Пароль" /></td>
+                    </tr>
+                    <tr>
+                        <td><input class="input-repeat-password" type="password" placeholder="Повторите пароль" /></td>
+                    </tr>
+                    <tr>
+                        <td><input class="input-submit" type="button" onclick="registerUser" title="Зарегистрироваться в системе" value="Зарегистрироваться" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
     </div>
 
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
@@ -25,15 +41,12 @@
             $.getJSON(uri)
                 .done(function (data) {
                     // On success, 'data' contains a list of products.
-                    $.each(data, function (key, item) {
-                        // Add a list item for the product.
-                        $('<li>', { text: formatItem(item) }).appendTo($('#products'));
-                    });
+                    console.log(data);
                 });
         });
 
-        function formatItem(item) {
-            return item.Name + ': $' + item.Balance;
+        function registerUser() {
+
         }
 
         function find() {

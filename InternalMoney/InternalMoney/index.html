@@ -25,7 +25,7 @@
                         <td><input class="input-repeat-password" type="password" placeholder="Повторите пароль" /></td>
                     </tr>
                     <tr>
-                        <td><input class="input-submit" type="button" onclick="registerUser" title="Зарегистрироваться в системе" value="Зарегистрироваться" /></td>
+                        <td><input class="input-submit" type="button" onclick="registerUser()" title="Зарегистрироваться в системе" value="Зарегистрироваться" /></td>
                     </tr>
                 </tbody>
             </table>
@@ -46,7 +46,23 @@
         });
 
         function registerUser() {
-
+            var userName = $('.input-user-name').val();
+            var userEmail = $('.input-user-email').val();
+            var password = $('.input-password').val();
+            var repeatPassword = $('.input-repeat-password').val();
+            if (userName != '' && userEmail != '' && password != '' && repeatPassword != '') {
+                if (password == repeatPassword) {
+                    $.ajax({
+                        method: "POST",
+                        url: uri,
+                        dataType: { Id: 3, Name: userName, Email: userEmail, Password: password, Balance: 500 },
+                        success: function (data) {
+                            console.log('data');
+                            console.log(data);
+                        }
+                    });
+                }
+            }
         }
 
         function find() {

@@ -7,7 +7,7 @@
     <div>
         <h2>Parrot Wings</h2>
     </div>
-    <div>
+    <div class="registration-form">
         <fieldset>
             <legend>Регистрация</legend>
             <table>
@@ -31,6 +31,15 @@
             </table>
         </fieldset>
     </div>
+    <div class="user-card">
+        <div class="user-name"></div>
+        <div class="user-balance"></div>
+    </div>
+    <div class="send-money-form" style="display: none;">
+        <select class="user-select">
+        </select>
+        <input type="text" class="money"/>
+    </div>
 
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
     <script>
@@ -45,6 +54,17 @@
                 });
         });
 
+        function ajaxHelper(uri, method, data) {
+            return $.ajax({
+                type: method,
+                url: uri,
+                dataType: 'json',
+                contentType: 'application/json charset=utf-8',
+                data: data ? JSON.stringify(data) : null
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+            });
+        }
+
         function registerUser() {
             var userName = $('.input-user-name').val();
             var userEmail = $('.input-user-email').val();
@@ -52,31 +72,19 @@
             var repeatPassword = $('.input-repeat-password').val();
             if (userName != '' && userEmail != '' && password != '' && repeatPassword != '') {
                 if (password == repeatPassword) {
-                    $.ajax({
-                        method: "POST",
-                        url: uri,
-                        contentType: "application/json; charset=utf-8",
-                        dataType: "json",
-                        dataType: JSON.stringify([{Name: userName, Email: userEmail, Password: password, Balance: 500 }]),
-                        success: function (data) {
-                            console.log('data');
-                            console.log(data);
+                    ajaxHelper(uri, "POST", { Name: userName, Email: userEmail, Password: password, Balance: 500 }).done(function (dd) {
+                        if (dd.Id !== undefined) {
+                            $('.registration-form').hide();
+                            $('.user-card .user-name').text(dd.Name);
+                            $('.user-card .user-balance').text(dd.Balance);
                         }
                     });
                 }
             }
         }
 
-        function find() {
-            var id = $('#prodId').val();
-            $.getJSON(uri + '/' + id)
-                .done(function (data) {
-                    $('#product').text(formatItem(data));
-                })
-                .fail(function (jqXHR, textStatus, err) {
-                    $('#product').text('Error: ' + err);
-                });
-        }
+        function UserList
+
     </script>
 </body>
 </html>

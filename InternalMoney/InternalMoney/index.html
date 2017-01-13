@@ -55,7 +55,9 @@
                     $.ajax({
                         method: "POST",
                         url: uri,
-                        dataType: { Id: 3, Name: userName, Email: userEmail, Password: password, Balance: 500 },
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        dataType: JSON.stringify([{Name: userName, Email: userEmail, Password: password, Balance: 500 }]),
                         success: function (data) {
                             console.log('data');
                             console.log(data);

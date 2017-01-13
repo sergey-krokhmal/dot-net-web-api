@@ -20,6 +20,8 @@ namespace InternalMoney.Models
         }
 
 		public System.Data.Entity.DbSet<InternalMoney.Models.User> Users { get; set; }
+
+		public System.Data.Entity.DbSet<InternalMoney.Models.Transaction> Transactions { get; set; }
     
     }
 }

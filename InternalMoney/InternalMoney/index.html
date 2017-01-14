@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="internalMoneyApp">
 <head>
     <title>Parrot Wings</title>
 </head>
@@ -36,14 +36,13 @@
         <div class="user-balance"></div>
     </div>
     <div class="send-money-form" style="display: none;">
-        <select class="user-select">
-        </select>
-        <input type="text" class="money"/>
+        <select class="user-select"></select>
+        <input type="text" class="money" />
     </div>
     <ng-view></ng-view>
-    <script src="~/bundles/jquery"></script>
-    <script src="~/bundles/bootstrap"></script>
-    <script src="~/Content/css"></script>
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <!-->script src="Scripts/angular.min.js"></script-->
+    <!-->script src="Scripts/app/app.js"></script-->
     <script>
         var uri = 'api/User';
 

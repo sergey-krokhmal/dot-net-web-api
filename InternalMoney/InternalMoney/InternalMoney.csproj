@@ -88,10 +88,12 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\answerList.js" />
     <Content Include="Scripts\app\controllers\AnswerController.js" />
+    <Content Include="Scripts\app\controllers\LoginController.js" />
     <Content Include="Scripts\app\controllers\QuestionController.js" />
     <Content Include="Scripts\app\controllers\TestController.js" />
     <Content Include="Scripts\app\dataService.js" />
@@ -886,7 +888,9 @@
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Views\login.html" />
     <Content Include="Views\question.html" />
+    <Content Include="Views\registration.html" />
     <Content Include="Views\test.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -894,6 +898,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TransactionController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -905,6 +910,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\InternalMoneyContext.cs" />
+    <Compile Include="Models\LoginInput.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

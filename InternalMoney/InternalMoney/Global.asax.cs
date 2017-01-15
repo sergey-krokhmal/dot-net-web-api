@@ -13,5 +13,15 @@ namespace InternalMoney
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
+
+		private const string ROOT_DOCUMENT = "/index.html";
+
+		protected void Application_BeginRequest(Object sender, EventArgs e)
+		{
+			string url = Request.Url.LocalPath;
+			bool isApi = Request.Url.Segments.Contains(WebApiConfig.ApiRootSegment);
+			if (!System.IO.File.Exists(Context.Server.MapPath(url)) && !isApi)
+				Context.RewritePath(ROOT_DOCUMENT);
+		}
     }
 }

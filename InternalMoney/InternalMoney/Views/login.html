@@ -1,0 +1,19 @@
+﻿<div class="login-form col-md-3 center-block">
+    <h2>Вход</h2>
+    <form name="login-form" ng-submit="vm.login()" role="form" novalidate="novalidate">
+        <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+            <label for="email">E-mail</label>
+            <input type="text" name="email" id="email" class="form-control" ng-model="vm.email" required placeholder="Введите e-mail" />
+            <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">E-mail обязательное поле</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label for="password">Пароль</label>
+            <input type="password" name="password" id="password" class="form-control" ng-model="vm.password" required placeholder="Введите пароль" />
+            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Пароль обязательное поле</span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Войти</button>
+            <a href="/register" class="btn btn-link">Зарегистрироваться</a>
+        </div>
+    </form>
+</div>

@@ -1,9 +1,8 @@
 internalMoneyApp.controller('AnswerController',
-    function AnswerController($scope, $http){
+    function AnswerController($scope, $http, $templateCache) {
 		
         $scope.$on('$routeChangeStart', function (event, next, current) {
             if (typeof (current) !== 'undefined') {
-                $templateCache.remove(next.templateUrl);
                 console.log("Remove cache");
                 console.log(next);
                 console.log(current);

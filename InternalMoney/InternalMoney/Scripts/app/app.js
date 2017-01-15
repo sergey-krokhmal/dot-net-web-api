@@ -4,19 +4,29 @@
         {
             templateUrl:'Views/question.html',
             controller:'QuestionController'
-        });
-        $routeProvider.when('/answer',
+        })
+        .when('/answer',
         {
             templateUrl:'Views/answer.html',
             controller:'AnswerController'
-        });
-        $routeProvider.when(
+        })
+        .when(
             "/test",
             {
                 templateUrl:'Views/test.html',
                 controller:'TestController'
             }
-        );
+        )
+        .when(
+            "/login",
+            {
+                templateUrl: 'Views/login.html',
+                controller: 'LoginController',
+                controllerAs: 'vm'
+            }
+        )
+        .otherwise({ redirectTo: '/login' });
+
         $locationProvider.html5Mode({
             enabled: true,
             requireBase: true

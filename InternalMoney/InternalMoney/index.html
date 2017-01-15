@@ -3,46 +3,26 @@
 <head>
     <title>Parrot Wings</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="Content/bootstrap.min.css"/>
+    <link rel="stylesheet" href="Content/style.css" />
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
+    <!--script src="Scripts/jquery-3.1.1.js"></script-->
     <script src="Scripts/app/app.js"></script>
     <script src="Scripts/app/controllers/TestController.js"></script>
-    <!--script src="Scripts/app/dataService.js"></script>
+    <script src="Scripts/app/controllers/LoginController.js"></script>
+    <script src="Scripts/app/dataService.js"></script>
     <script src="Scripts/app/controllers/QuestionController.js"></script>
-    <script src="Scripts/app/controllers/AnswerController.js"></script-->
+    <script src="Scripts/app/controllers/AnswerController.js"></script>
     <script type="text/javascript">
+        console.log(window.location.pathname);
         angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
     </script>
 </head>
 <body ng-app="internalMoneyApp">
-    <div>
-        <h2>Parrot Wings</h2>
+    <div class="container-fluid bg-primary">
+        <h1>Parrot Wings</h1>
     </div>
-    <div class="registration-form">
-        <fieldset>
-            <legend>Регистрация</legend>
-            <table>
-                <tbody>
-                    <tr>
-                        <td><input class="input-user-name" type="text" placeholder="Имя" /></td>
-                    </tr>
-                    <tr>
-                        <td><input class="input-user-email" type="email" placeholder="E-mail" /></td>
-                    </tr>
-                    <tr>
-                        <td><input class="input-password" type="password" placeholder="Пароль" /></td>
-                    </tr>
-                    <tr>
-                        <td><input class="input-repeat-password" type="password" placeholder="Повторите пароль" /></td>
-                    </tr>
-                    <tr>
-                        <td><input class="input-submit" type="button" onclick="registerUser()" title="Зарегистрироваться в системе" value="Зарегистрироваться" /></td>
-                    </tr>
-                </tbody>
-            </table>
-        </fieldset>
-    </div>
-
     <div class="send-money-form" style="display: none;">
         <select class="user-select"></select>
         <input type="text" class="money" />
@@ -68,10 +48,10 @@
             $.getJSON(uri)
                 .done(function (data) {
                     // On success, 'data' contains a list of products.
-                    //console.log(data);
+                    console.log(data);
                 });
-        });
-
+        });*/
+        /*
         function ajaxHelper(uri, method, data) {
             return $.ajax({
                 type: method,

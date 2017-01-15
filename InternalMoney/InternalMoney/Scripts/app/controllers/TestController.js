@@ -1,9 +1,6 @@
 ﻿internalMoneyApp.controller('TestController',
     function TestController($scope, $route) {
         var p = $route.current.params;
-        var path = decodeURIComponent(p.p1);
-        console.log(p.p1);
-        console.log(path);
 
         $scope.path = '/';
         if (p.p1) $scope.path += p.p1;

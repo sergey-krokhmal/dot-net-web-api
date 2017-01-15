@@ -1,9 +1,20 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" ng-app="internalMoneyApp">
+<html>
 <head>
     <title>Parrot Wings</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/app/app.js"></script>
+    <script src="Scripts/app/controllers/TestController.js"></script>
+    <!--script src="Scripts/app/dataService.js"></script>
+    <script src="Scripts/app/controllers/QuestionController.js"></script>
+    <script src="Scripts/app/controllers/AnswerController.js"></script-->
+    <script type="text/javascript">
+        angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+    </script>
 </head>
-<body>
+<body ng-app="internalMoneyApp">
     <div>
         <h2>Parrot Wings</h2>
     </div>
@@ -31,27 +42,33 @@
             </table>
         </fieldset>
     </div>
-    <div class="user-card">
-        <div class="user-name"></div>
-        <div class="user-balance"></div>
-    </div>
+
     <div class="send-money-form" style="display: none;">
         <select class="user-select"></select>
         <input type="text" class="money" />
     </div>
-    <ng-view></ng-view>
-    <script src="Scripts/jquery-3.1.1.min.js"></script>
-    <!-->script src="Scripts/angular.min.js"></script-->
-    <!-->script src="Scripts/app/app.js"></script-->
+    <div>
+        <div class="user-card">
+            <div class="user-name"><a href="/test">тест</a></div>
+            <div class="user-name"><a href="/question">Вопрос</a></div>
+            <div class="user-balance"><a href="/answer">Ответ</a></div>
+        </div>
+        <div ng-view></div>
+    </div>
+
+
+    
+
     <script>
         var uri = 'api/User';
 
-        $(document).ready(function () {
+        /*$(document).ready(function () {
+            //angular.module('ng').filter('tel', function () { });
             // Send an AJAX request
             $.getJSON(uri)
                 .done(function (data) {
                     // On success, 'data' contains a list of products.
-                    console.log(data);
+                    //console.log(data);
                 });
         });
 
@@ -82,7 +99,7 @@
                     });
                 }
             }
-        }
+        }*/
 
 
     </script>

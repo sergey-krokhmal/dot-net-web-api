@@ -29,7 +29,7 @@ namespace InternalMoney.Controllers
 
             // Is user exist
 			User existUser = await db.Users.Where(u => u.Email == li.Login).FirstOrDefaultAsync();
-			if (existUser.Equals(null) || existUser.Password != li.Password)
+			if (existUser == null || existUser.Password != li.Password)
 			{
 				return Ok(new { Message = "Неверный логин или пароль" });
 			}

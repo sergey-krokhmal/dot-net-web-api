@@ -910,6 +910,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\InternalMoneyContext.cs" />
+    <Compile Include="Models\LoginInfo.cs" />
     <Compile Include="Models\LoginInput.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Models\User.cs" />

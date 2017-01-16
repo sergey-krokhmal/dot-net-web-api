@@ -1,4 +1,5 @@
-﻿<div class="login-form col-md-3 center-block">
+﻿<div class="login-form col-md-3 center-block jumbotron">
+    <div class="alert alert-danger" ng-show="vm.error">{{vm.errorMsg}}</div>
     <h2>Вход</h2>
     <form name="login-form" ng-submit="vm.login()" role="form" novalidate="novalidate">
         <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">

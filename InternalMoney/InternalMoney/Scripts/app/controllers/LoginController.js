@@ -4,10 +4,11 @@
 
         vm.login = login;
 
+        vm.error = false;
+
         function login() {
             //vm.dataLoading = true;
             if (vm.email != '' && vm.password != '') {
-                console.log('wrong');
                 $http({
                     url: "api/Login",
                     method: "POST",
@@ -17,16 +18,22 @@
                     }
                 })
                 .then(function successCallback(response) {
+                    if (response.data.Message !== undefined) {
+                        vm.error = true;
+                        vm.errorMsg = response.data.Message;
+                    } else {
+                        vm.error = false;
+                    }
                     console.log(response.data);
                     console.log(response.status);
                     $scope.data = response.data;
                 }, function errorCallback(response) {
-                    $scope.status = response.status;
+                    
                     console.log(response.data);
                     console.log(response.status);
                 });
             } else {
-                console.log('work');
+            
             }
             /*$http({
                 url: "http://example.appspot.com/rest/app",
@@ -38,6 +45,5 @@
                 $scope.status = status;
             });*/
         };
-        console.log("It is work");
     }
 )

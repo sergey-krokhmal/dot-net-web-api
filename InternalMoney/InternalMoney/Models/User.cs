@@ -8,13 +8,12 @@ namespace InternalMoney.Models
 		public int Id { get; set; }
 
 		[Required]
+		public string Id_Identity{ get; set; }
+		[Required]
 		public string Name { get; set; }
 
 		[Required]
 		public string Email { get; set; }
-
-		[Required]
-		public string Password { get; set; }
 
 		[Required]
 		public decimal Balance { get; set; }
@@ -24,6 +23,7 @@ namespace InternalMoney.Models
 
 		public User(IdentityUser rbm)
 		{
+			Id_Identity = rbm.Id;
 			Name = rbm.UserName;
 			Email = rbm.Email;
 			Balance = startBalance;

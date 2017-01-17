@@ -15,10 +15,6 @@ namespace InternalMoney.Migrations
 
         protected override void Seed(InternalMoney.Models.InternalMoneyContext context)
         {
-			context.Users.AddOrUpdate(x => x.Id,
-			   new User() { Id = 1, Name = "Jane Austen", Email = "test@email", Password = "123", Balance = 500 },
-			   new User() { Id = 2, Name = "Sergey Krokhmal", Email = "test2@email", Password = "123", Balance = 500 }
-		   );
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

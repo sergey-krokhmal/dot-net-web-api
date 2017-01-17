@@ -25,9 +25,10 @@
 <body ng-app="internalMoneyApp">
     <div class="container-fluid bg-primary">
         <h1>Parrot Wings</h1>
-        <div class="user-card" ng-hide="logedIn">
+        <div class="user-card" ng-show="logedIn">
             <div class="user-name">{{globals.currentUser.email}}</div>
             <div class="user-balance">500</div>
+            <a href="/login" class="btn btn-info">Выйти</a>
         </div>
     </div>
     <div class="send-money-form" style="display: none;">

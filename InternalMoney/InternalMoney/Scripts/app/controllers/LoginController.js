@@ -6,6 +6,18 @@
 
         vm.error = false;
 
+        if ($cookieStore.get('globals') !== undefined){
+            $http({
+                url: "api/Account/Logout",
+                method: "POST"
+            })
+            .then(function successCallback(response) {
+                if (response.status == 200) {
+                    $cookieStore.remove('globals');
+                }
+            });
+        }
+
         function login() {
             //vm.dataLoading = true;
             if (vm.email != '' && vm.password != '') {

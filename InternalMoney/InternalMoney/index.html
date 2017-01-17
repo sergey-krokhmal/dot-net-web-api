@@ -5,8 +5,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="Content/bootstrap.min.css"/>
     <link rel="stylesheet" href="Content/style.css" />
-    <script src="Scripts/angular.js"></script>
-    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/angular-cookies.min.js"></script>
     <!--script src="Scripts/jquery-3.1.1.js"></script-->
     <script src="Scripts/app/app.js"></script>
     <script src="Scripts/app/controllers/LoginController.js"></script>
@@ -24,22 +25,18 @@
 <body ng-app="internalMoneyApp">
     <div class="container-fluid bg-primary">
         <h1>Parrot Wings</h1>
+        <div class="user-card" ng-hide="logedIn">
+            <div class="user-name">{{globals.currentUser.email}}</div>
+            <div class="user-balance">500</div>
+        </div>
     </div>
     <div class="send-money-form" style="display: none;">
         <select class="user-select"></select>
         <input type="text" class="money" />
     </div>
     <div>
-        <div class="user-card">
-            <div class="user-name"><a href="/test">тест</a></div>
-            <div class="user-name"><a href="/question">Вопрос</a></div>
-            <div class="user-balance"><a href="/answer">Ответ</a></div>
-        </div>
         <div ng-view></div>
     </div>
-
-
-    
 
     <script>
         var uri = 'api/User';

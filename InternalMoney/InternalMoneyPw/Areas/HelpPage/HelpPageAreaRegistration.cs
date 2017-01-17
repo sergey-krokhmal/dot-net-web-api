@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace InternalMoney.Areas.HelpPage
+namespace InternalMoneyPw.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace InternalMoney.Models
+namespace InternalMoneyPw.Models
 {
     // Модели, используемые в качестве параметров действий AccountController.
 

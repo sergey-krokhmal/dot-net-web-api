@@ -7,9 +7,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using InternalMoney.Providers;
+using InternalMoneyPw.Providers;
 
-namespace InternalMoney
+namespace InternalMoneyPw
 {
     public partial class Startup
     {

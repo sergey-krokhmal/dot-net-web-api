@@ -1,5 +1,5 @@
-﻿var internalMoneyApp = angular.module('internalMoneyApp', ["ngRoute"])
-    .config(function ($routeProvider, $locationProvider) {
+﻿var internalMoneyApp = angular.module('internalMoneyApp', ["ngRoute", "ngCookies"])
+    .config(function ($routeProvider, $locationProvider, $cookiesProvider) {
         $routeProvider
         .when(
             "/login",
@@ -17,10 +17,39 @@
                 controllerAs: 'vm'
             }
         )
-        .otherwise({ redirectTo: '/login' });
+        .when(
+            "/home",
+            {
+                templateUrl: 'Views/home.html',
+            }
+        )
+        .otherwise({ redirectTo: '/home' });
 
         $locationProvider.html5Mode({
             enabled: true,
             requireBase: true
         });
-});
+        $cookiesProvider.defaults.path = '/';
+    })
+    .run(function ($rootScope, $location, $cookieStore, $http) {
+
+        // keep user logged in after page refresh
+        $rootScope.globals = $cookieStore.get('globals') || {};
+        console.log("rootScope:");
+        console.log($rootScope.globals);
+        console.log("-rootScope:");
+        console.log($rootScope.globals.currentUser);
+        $rootScope.logedIn = false;
+        if ($rootScope.globals.currentUser) {
+            $rootScope.logedIn = true;
+            $http.defaults.headers.common['Authorization'] = 'Bearer ' + $rootScope.globals.currentUser.token;
+        }
+
+        $rootScope.$on('$locationChangeStart', function (event, next, current) {
+            // redirect to login page if not logged in
+            console.log($rootScope.globals.currentUser);
+            if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
+                $location.path('/login');
+            }
+        });
+    });

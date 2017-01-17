@@ -16,6 +16,10 @@ namespace InternalMoney
 			get { return "api/"; }
 		}
 
+		public static string TokenSegment {
+			get { return "Token"; }
+		}
+
         public static void Register(HttpConfiguration config)
         {
 			// Конфигурация и службы Web API

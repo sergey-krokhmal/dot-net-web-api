@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace InternalMoney.Models
+namespace InternalMoneyPw.Models
 {
     // Модели, возвращаемые действиями AccountController.
 

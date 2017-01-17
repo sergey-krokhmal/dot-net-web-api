@@ -4,9 +4,9 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(InternalMoney.Startup))]
+[assembly: OwinStartup(typeof(InternalMoneyPw.Startup))]
 
-namespace InternalMoney
+namespace InternalMoneyPw
 {
     public partial class Startup
     {

@@ -44,6 +44,7 @@ namespace InternalMoney.Controllers
 
         // GET api/Account/UserInfo
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
+		[AllowAnonymous]
         [Route("UserInfo")]
         public UserInfoViewModel GetUserInfo()
         {
@@ -336,8 +337,8 @@ namespace InternalMoney.Controllers
                 return errorResult;
             }
 
-			//User dbUser = new User(user);
-			//db.Users.Add(dbUser);
+			User dbUser = new User(user);
+			db.Users.Add(dbUser);
 
 			return Ok();
         }

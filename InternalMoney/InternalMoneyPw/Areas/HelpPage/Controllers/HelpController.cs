@@ -1,9 +1,9 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using InternalMoney.Areas.HelpPage.Models;
+using InternalMoneyPw.Areas.HelpPage.Models;
 
-namespace InternalMoney.Areas.HelpPage.Controllers
+namespace InternalMoneyPw.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

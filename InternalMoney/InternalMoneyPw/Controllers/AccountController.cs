@@ -13,11 +13,11 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using InternalMoney.Models;
-using InternalMoney.Providers;
-using InternalMoney.Results;
+using InternalMoneyPw.Models;
+using InternalMoneyPw.Providers;
+using InternalMoneyPw.Results;
 
-namespace InternalMoney.Controllers
+namespace InternalMoneyPw.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]

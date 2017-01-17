@@ -9,7 +9,7 @@ using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 
-namespace InternalMoney.Providers
+namespace InternalMoneyPw.Providers
 {
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {

@@ -1,5 +1,5 @@
 ﻿internalMoneyApp.controller('LoginController',
-    function LoginController($scope, $route, $http) {
+    function LoginController($scope, $route, $http, $cookieStore, $rootScope, $location) {
         var vm = this;
 
         vm.login = login;
@@ -10,23 +10,33 @@
             //vm.dataLoading = true;
             if (vm.email != '' && vm.password != '') {
                 $http({
-                    url: "api/Login",
+                    url: "/Token",
                     method: "POST",
-                    data: {"Login": vm.email, "Password": vm.password},
+                    data: "grant_type=password&username="+vm.email+"&password="+vm.password,
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/x-www-form-urlencoded"
                     }
                 })
                 .then(function successCallback(response) {
-                    if (response.data.Message !== undefined) {
-                        vm.error = true;
-                        vm.errorMsg = response.data.Message;
+                    if (response.status == 200) {
+                        token = response.data.access_token;
+                        $rootScope.globals = {
+                            currentUser: {
+                                email: vm.email,
+                                token: token
+                            }
+                        };
+                        $http.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+                        $cookieStore.put('globals', $rootScope.globals);
+                        $location.url('/home');
                     } else {
-                        vm.error = false;
+                        if (response.data.Message !== undefined) {
+                            vm.error = true;
+                            vm.errorMsg = response.data.Message;
+                        } else {
+                            vm.error = false;
+                        }
                     }
-                    console.log(response.data);
-                    console.log(response.status);
-                    $scope.data = response.data;
                 }, function errorCallback(response) {
                     
                     console.log(response.data);

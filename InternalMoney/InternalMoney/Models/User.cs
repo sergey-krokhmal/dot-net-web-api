@@ -24,7 +24,6 @@ namespace InternalMoney.Models
 
 		public User(IdentityUser rbm)
 		{
-			Id = int.Parse(rbm.Id);
 			Name = rbm.UserName;
 			Email = rbm.Email;
 			Balance = startBalance;

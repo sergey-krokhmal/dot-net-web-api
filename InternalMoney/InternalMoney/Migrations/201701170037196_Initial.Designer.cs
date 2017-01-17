@@ -13,7 +13,7 @@ namespace InternalMoney.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201701122003252_Initial"; }
+            get { return "201701170037196_Initial"; }
         }
         
         string IMigrationMetadata.Source

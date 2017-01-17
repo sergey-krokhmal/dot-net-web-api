@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternalMoney", "InternalMoney\InternalMoney.csproj", "{24F12771-D833-440D-BBA1-DB2A2FDF265B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternalMoneyPw", "InternalMoneyPw\InternalMoneyPw.csproj", "{DC25498D-ABE9-4F6A-AD90-047FA3B1823E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{24F12771-D833-440D-BBA1-DB2A2FDF265B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24F12771-D833-440D-BBA1-DB2A2FDF265B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24F12771-D833-440D-BBA1-DB2A2FDF265B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC25498D-ABE9-4F6A-AD90-047FA3B1823E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC25498D-ABE9-4F6A-AD90-047FA3B1823E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC25498D-ABE9-4F6A-AD90-047FA3B1823E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC25498D-ABE9-4F6A-AD90-047FA3B1823E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

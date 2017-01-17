@@ -25,6 +25,8 @@ namespace InternalMoney.Controllers
     {
         private const string LocalLoginProvider = "Локально";
 
+		private InternalMoneyContext db = new InternalMoneyContext();
+
         public AccountController()
             : this(Startup.UserManagerFactory(), Startup.OAuthOptions.AccessTokenFormat)
         {
@@ -334,7 +336,10 @@ namespace InternalMoney.Controllers
                 return errorResult;
             }
 
-            return Ok();
+			//User dbUser = new User(user);
+			//db.Users.Add(dbUser);
+
+			return Ok();
         }
 
         // POST api/Account/RegisterExternal

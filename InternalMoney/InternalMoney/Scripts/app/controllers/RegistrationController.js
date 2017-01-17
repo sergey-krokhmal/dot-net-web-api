@@ -1,18 +1,25 @@
-﻿internalMoneyApp.controller('LoginController',
-    function LoginController($scope, $route, $http) {
+﻿internalMoneyApp.controller('RegistrationController',
+    function RegistrationController($scope, $route, $http) {
         var vm = this;
 
-        vm.login = login;
+        vm.registration = registration;
 
         vm.error = false;
-
-        function login() {
+        
+        function registration() {
             //vm.dataLoading = true;
-            if (vm.email != '' && vm.password != '') {
+            if (vm.email != '' && vm.email != '' && vm.password != '') {
+                console.log(vm.user.username);
                 $http({
-                    url: "api/Login",
+                    url: "/api/Account/Register",
                     method: "POST",
-                    data: {"Login": vm.email, "Password": vm.password},
+                    data: 
+                        {
+                            UserName: vm.user.username,
+                            Email: vm.user.email,
+                            Password: vm.user.password,
+                            ConfirmPassword: vm.user.password
+                        },
                     headers: {
                         "Content-Type": "application/json"
                     }
@@ -28,12 +35,12 @@
                     console.log(response.status);
                     $scope.data = response.data;
                 }, function errorCallback(response) {
-                    
+
                     console.log(response.data);
                     console.log(response.status);
                 });
             } else {
-            
+
             }
             /*$http({
                 url: "http://example.appspot.com/rest/app",
@@ -47,3 +54,22 @@
         };
     }
 )
+
+
+var vm = this;
+
+vm.register = register;
+
+function register() {
+    vm.dataLoading = true;
+    UserService.Create(vm.user)
+        .then(function (response) {
+            if (response.success) {
+                FlashService.Success('Registration successful', true);
+                $location.path('/login');
+            } else {
+                FlashService.Error(response.message);
+                vm.dataLoading = false;
+            }
+        });
+}

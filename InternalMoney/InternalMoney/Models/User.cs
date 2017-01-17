@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System.ComponentModel.DataAnnotations;
 
 namespace InternalMoney.Models
 {
@@ -17,5 +18,16 @@ namespace InternalMoney.Models
 
 		[Required]
 		public decimal Balance { get; set; }
+
+		private decimal startBalance = 500;
+		public User() { }
+
+		public User(IdentityUser rbm)
+		{
+			Id = int.Parse(rbm.Id);
+			Name = rbm.UserName;
+			Email = rbm.Email;
+			Balance = startBalance;
+		}
 	}
 }

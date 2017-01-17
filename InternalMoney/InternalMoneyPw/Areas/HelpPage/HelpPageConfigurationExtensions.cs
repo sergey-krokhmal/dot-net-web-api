@@ -7,9 +7,9 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Description;
-using InternalMoneyPw.Areas.HelpPage.Models;
+using InternalMoney.Areas.HelpPage.Models;
 
-namespace InternalMoneyPw.Areas.HelpPage
+namespace InternalMoney.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

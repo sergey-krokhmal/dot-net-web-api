@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace InternalMoneyPw
+namespace InternalMoney
 {
 	public class BundleConfig
 	{

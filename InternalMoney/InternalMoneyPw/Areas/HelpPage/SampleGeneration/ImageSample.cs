@@ -1,6 +1,6 @@
 using System;
 
-namespace InternalMoneyPw.Areas.HelpPage
+namespace InternalMoney.Areas.HelpPage
 {
     /// <summary>
     /// This represents an image sample on the help page. There's a display template named ImageSample associated with this class.

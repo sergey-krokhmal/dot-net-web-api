@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace InternalMoneyPw.Controllers
+namespace InternalMoney.Controllers
 {
 	public class HomeController : Controller
 	{

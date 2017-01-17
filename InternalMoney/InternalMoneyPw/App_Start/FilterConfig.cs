@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace InternalMoneyPw
+namespace InternalMoney
 {
 	public class FilterConfig
 	{

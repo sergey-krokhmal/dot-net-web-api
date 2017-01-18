@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace InternalMoney.Models
+namespace InternalMoney.Modelss
 {
 	public class LoginInfo
 	{

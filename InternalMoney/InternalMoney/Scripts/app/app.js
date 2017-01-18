@@ -48,7 +48,7 @@
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
             // redirect to login page if not logged in
             console.log($rootScope.globals.currentUser);
-            if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
+            if ($location.path() !== '/login' && !$rootScope.globals.currentUser && $location.path() !== '/registration') {
                 $location.path('/login');
             }
         });

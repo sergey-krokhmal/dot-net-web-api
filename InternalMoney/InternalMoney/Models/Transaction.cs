@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using InternalMoney.Infrasturcture;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InternalMoney.Models
 {

@@ -1,4 +1,6 @@
-﻿using InternalMoney.Models;
+﻿using InternalMoney.Infrasturcture;
+using InternalMoney.Models;
+using InternalMoney.Infrasturcture;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
@@ -13,7 +15,7 @@ namespace InternalMoney
     {
         private InternalMoneyContext _ctx;
 
-        private UserManager<IdentityUser> _userManager;
+        private ApplicationUserManager<Account> _userManager;
 
         public AuthRepository()
         {
@@ -25,8 +27,7 @@ namespace InternalMoney
         {
             IdentityUser user = new IdentityUser
             {
-                UserName = userModel.UserName,
-                Email = userModel.Email
+                UserName = userModel.Email
             };
 
             var result = await _userManager.CreateAsync(user, userModel.Password);

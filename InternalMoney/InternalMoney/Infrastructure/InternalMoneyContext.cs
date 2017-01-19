@@ -1,13 +1,14 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using InternalMoney.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace InternalMoney.Models
+namespace InternalMoney.Infrasturcture
 {
-    public class InternalMoneyContext : IdentityDbContext
+    public class InternalMoneyContext : IdentityDbContext<Account>
     {
 
         public DbSet<Transaction> Transactions { get; set; }

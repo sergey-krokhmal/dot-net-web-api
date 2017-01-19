@@ -13,7 +13,7 @@ namespace InternalMoney.Models
         public DbSet<Transaction> Transactions { get; set; }
 
         public InternalMoneyContext()
-            : base("DefaultConnection")
+            : base("InternalMoneyContext")
         {
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;

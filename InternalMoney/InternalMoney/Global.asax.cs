@@ -9,10 +9,10 @@ namespace InternalMoney
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
-        protected void Application_Start()
+        /*protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
-        }
+        }*/
 
 		private const string ROOT_DOCUMENT = "/index.html";
 

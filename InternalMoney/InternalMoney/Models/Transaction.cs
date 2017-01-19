@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InternalMoney.Models
 {
@@ -6,17 +6,16 @@ namespace InternalMoney.Models
 	{
 		public int Id { get; set; }
 
-		[Required]
 		public int Id_Sender { get; set; }
 
-		public User Sender { get; set; }
+        [ForeignKey("Id_Sender")]
+		public Account Sender { get; set; }
 
-		[Required]
 		public int Id_Receiver { get; set; }
 
-		public User Receiver { get; set; }
+        [ForeignKey("Id_Recipient")]
+        public Account Recipient { get; set; }
 
-		[Required]
-		public decimal Money { get; set; }
+		public decimal Sum { get; set; }
 	}
 }

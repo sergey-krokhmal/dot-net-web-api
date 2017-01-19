@@ -9,13 +9,34 @@ namespace InternalMoney.Models
 {
     public class InternalMoneyContext : IdentityDbContext
     {
-        public InternalMoneyContext() : base("name=InternalMoneyContext")
+
+        public DbSet<Transaction> Transactions { get; set; }
+
+        public InternalMoneyContext()
+            : base("DefaultConnection")
         {
+            Configuration.ProxyCreationEnabled = false;
+            Configuration.LazyLoadingEnabled = false;
         }
 
-		public System.Data.Entity.DbSet<InternalMoney.Models.User> Users { get; set; }
+        public static InternalMoneyContext Create()
+        {
+            return new InternalMoneyContext();
+        }
 
-		public System.Data.Entity.DbSet<InternalMoney.Models.Transaction> Transactions { get; set; }
-    
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Transaction>()
+                        .HasRequired(m => m.Sender)
+                        .WithMany(t => t.SenderTransactions)
+                        .HasForeignKey(m => m.Id_Sender)
+                        .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Transaction>()
+                        .HasRequired(m => m.Recipient)
+                        .WithMany(t => t.RecipientTransactions)
+                        .HasForeignKey(m => m.Recipient)
+                        .WillCascadeOnDelete(false);
+        }
     }
 }
